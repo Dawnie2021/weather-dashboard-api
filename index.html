@@ -11,104 +11,51 @@
 </head>
 
 <body>
-    <style>
-        * {
-            padding: 6px;
-        }
-
-        #header {
-
-            background-color: blueviolet;
-            color: white;
-            display: flex;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            width: 100%;
-        }
-
-        
-    </style>
+    
     <main class="container-fluid">
-
-        <div>
-            <h2 id="header">Weather Dashboard</h2>
-        </div>
 
         <div class="row">
             <div class="col col-md-4">
                 <form>
-                    <div class="mb-3">
-                        <label class="form-label">Search for a City:</label>
-                        <input type="text" class="form-control" id="city">
-                    </div>
+                    <label class="form-label">Search for a City:</label>
+                    <input type="text" class="form-control" id="city">
                     <div class="d-grid gap-2">
                         <button class="btn btn-primary" type="button">Search</button>
                 </form>
             </div>
         </div>
 
-
-
-        <div class="card" style="width: 40rem;">
-
-            <h4 class="card-title">City/Date</h5>
-                <p class="card-text">Temp</p>
-                <p class="card-text">Wind</p>
-                <p class="card-text">Humidity</p>
+        <div class="col col-md-8">
+            <h2>Weather Dashboard</h2>
+            <div class="results">
+                <div class="card" style="width: 40rem;">
+                    <h4 class="card-title">City/Date</h4>
+                    <p class="card-text">Temp</p>
+                    <p class="card-text">Wind</p>
+                    <p class="card-text">Humidity</p>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Date</li>
+                      <li class="list-group-item">Temp</li>
+                      <li class="list-group-item">Wind</li>
+                      <li class="list-group-item">Humidity</li>
+                    </ul>
+                  </div>
+            </div>
         </div>
 
 
-            <div class="card text-bg-success mb-3" style="max-width: 12rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Date</h5>
-                    <p>Temp</p>
-                    <p>Wind</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
-        
-            <div class="card text-bg-success mb-3" style="max-width: 12rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Date</h5>
-                    <p>Temp</p>
-                    <p>Wind</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
-        
-            <div class="card text-bg-success mb-3" style="max-width: 12rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Date</h5>
-                    <p>Temp</p>
-                    <p>Wind</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
-        
-            <div class="card text-bg-success mb-3" style="max-width: 12rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Date</h5>
-                    <p>Temp</p>
-                    <p>Wind</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
-        
-            <div class="card text-bg-success mb-3" style="max-width: 12rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Date</h5>
-                    <p>Temp</p>
-                    <p>Wind</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
-      
-          
-          
-        
-            
+
+
+
+
+
+
+
+
+
+
 
 
 
