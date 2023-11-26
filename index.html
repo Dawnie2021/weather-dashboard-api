@@ -14,63 +14,66 @@
     <style>
         .five-day-forecast {
             display: flex;
-            
+
         }
-    </style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding:15px;
+            font-size: 25px;
+            font-weight: 500;
+            color: white;
+            background-color: blueviolet;
+          display: flex;
+          justify-content: center;
+        }
+
+        .results {
+            padding: 15px;
+        }
+
+        h3 {
+            padding:10px;
+        }
+
     
+    </style>
+<header>Weather Dashboard</header>
     <main class="container-fluid">
-
         <div class="row">
-            <div class="col col-md-12">
+            <div class="col col-md-3">
+             
+                <h3>Search for a City:</h3>
+            
                 <form>
-                    
-                    <label class="form-label">Search for a City:
                     <input type="text" class="form-control" id="city">
-                </label>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="button">Search</button>
-                  
                 </form>
-            </div>
-        </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button">Search</button>
 
-        <div class>
-            <h2>Weather Dashboard</h2>
-            <div class="results">
-                <div class="card" style="width: 40rem;">
-                    <h4 class="card-title">City/Date</h4>
-                    <p class="card-text">Temp</p>
-                    <p class="card-text">Wind</p>
-                    <p class="card-text">Humidity</p>
                 </div>
-                <!-- <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                      <li class=>Date</li>
-                      <li class=>Temp</li>
-                      <li class=>Wind</li>
-                      <li class=>Humidity</li>
-                    </ul>
-                  </div> -->
+            </div>
+
+            <div class="col col-md-8">
+                <div class="results">
+                    <div class="card" style="width: 40rem;">
+                        <h4 class="card-title">City/Date</h4>
+                        <p class="card-text">Temp</p>
+                        <p class="card-text">Wind</p>
+                        <p class="card-text">Humidity</p>
+                    </div>
+                </div>
             </div>
             <div class="five-day-forecast">
-                
+
             </div>
-        </div>
 
 
-
-
-
-
-
-
-
-
-
-
-</main>
-<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 
 </body>
 
