@@ -59,6 +59,10 @@ function getForecast(cityName, lat, lon) {
         })
 }
 
+function saveForecastToLocalStorage(cityName, data) {
+    // save the data to local storage
+    localStorage.setItem(`${cityName}-forecast`, JSON.stringify(data));
+}
 
 
 // created a for loop to get the five days of weather data (Tutor helped with this part)
