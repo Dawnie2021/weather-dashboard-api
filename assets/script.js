@@ -106,6 +106,28 @@ function loadForecastFromLocalStorage(cityName) {
     }
 }
 
+function loadCurrentWeatherFromLocalStorage(cityName) {
+    console.log(cityName)
+    // retrieve the data from local storage
+    data = JSON.parse(localStorage.getItem(`${cityName}-current`));
+    console.log(data)
+
+    var date = new Date(data.dt * 1000);
+    var options = { month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+    var formattedDate = date.toLocaleString('en-US', options);
+
+    var currentWeatherCard = `
+    <div class="card">
+    <h4 class="card-title">${data.name}</h4>
+    <h5 class="card-title">${formattedDate}</h5>
+    Temp ${data.main.temp}<br>
+    Wind ${data.wind.speed}<br>
+    Humidity ${data.main.humidity}
+    </div>`
+
+    currentWeatherContainer.innerHTML = currentWeatherCard
+}
+
 
 
 
