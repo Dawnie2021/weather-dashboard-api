@@ -9,7 +9,7 @@ searchButton.addEventListener('click, getCityGeoData');
 
 // created a function to get the city data
 function getCityGeoData() {
-// get the city name from the input
+    // get the city name from the input
     var cityName = cityInput.value
 
     // if the city name is not empty, then get the data 
@@ -18,11 +18,11 @@ function getCityGeoData() {
             .then(function (response) {
                 return response.json();
             })
-    
+
             .then(function (data) {
                 getWeatherReport(cityName, data[0].lat, data[0].lon);
             });
-        }
+    }
 
 }
 
@@ -76,7 +76,17 @@ function loadWeatherReportFromLocalStorage(cityName) {
     loadCurrentWeatherFromLocalStorage(cityName)
 }
 
-// created a for loop to get the five days of weather data (Tutor helped with this part)
+function loadForecastFromLocalStorage(cityName) {
+    // clear the 5 day forecast container
+    clearWeeklyWeather();
+
+    // retrieve the data from local storage
+    data = JSON.parse(localStorage.getItem(`${cityName}-forecast`));
+
+    // display the data if it exists
+    if (data) {
+
+        // created a for loop to get the five days of weather data (Tutor helped with this part)
         for (let i = 0; i < data.list.length; i += 8) {
             var fiveDayCard = `
             <div class="card m-1">
@@ -93,10 +103,12 @@ function loadWeatherReportFromLocalStorage(cityName) {
             fiveDayCardDiv.innerHTML = fiveDayCard
             fiveDayForecastContainer.appendChild(fiveDayCardDiv)
         }
-   
+    }
+}
 
 
-   
+
+
 
 
 
