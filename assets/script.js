@@ -1,7 +1,11 @@
-var city = document.querySelector('#city');
+var cityInput = document.getElementById("city");
+var searchButton = document.querySelector('.btn-primary');
 var fiveDayForecastContainer = document.querySelector(".five-day-forecast")
-var searchBtn = document.querySelector('.btn-primary');
-searchBtn.addEventListener('click', getCityGeoData);
+var searchHistoryContainer = document.getElementById("searchHistory");
+var currentWeatherContainer = document.getElementById("currentWeather");
+
+// added a click event listener to the search button
+searchButton.addEventListener('click, getCityGeoData');
 
 // Created a function to get the latitude and longitude
 function getGeoWeather(lat, lon) {
