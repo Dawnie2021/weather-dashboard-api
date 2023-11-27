@@ -70,6 +70,12 @@ function saveCurrentWeatherToLocalStorage(cityName, data) {
     localStorage.setItem(`${cityName}-current`, JSON.stringify(data));
 }
 
+// retrieve the data from local storage and display it
+function loadWeatherReportFromLocalStorage(cityName) {
+    loadForecastFromLocalStorage(cityName)
+    loadCurrentWeatherFromLocalStorage(cityName)
+}
+
 // created a for loop to get the five days of weather data (Tutor helped with this part)
         for (let i = 0; i < data.list.length; i += 8) {
             var fiveDayCard = `
