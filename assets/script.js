@@ -64,6 +64,11 @@ function saveForecastToLocalStorage(cityName, data) {
     localStorage.setItem(`${cityName}-forecast`, JSON.stringify(data));
 }
 
+function saveCurrentWeatherToLocalStorage(cityName, data) {
+    // save the data to local storage
+    console.log(data)
+    localStorage.setItem(`${cityName}-current`, JSON.stringify(data));
+}
 
 // created a for loop to get the five days of weather data (Tutor helped with this part)
         for (let i = 0; i < data.list.length; i += 8) {
