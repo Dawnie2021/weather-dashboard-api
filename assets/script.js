@@ -46,6 +46,19 @@ function getCurrentWeather(cityName, lat, lon) {
         })
 }
 
+// get the 5 day forecast
+function getForecast(cityName, lat, lon) {
+    fetch('https://api.openweathermap.org/data/2.5/forecast?appid=bceb14bd5cd6a234ef51a73c1cda6012&lat=' + lat + '&lon=' + lon + '&units=imperial')
+        .then(function (response) {
+            return response.json();
+
+        })
+        .then(function (data) {
+
+            saveForecastToLocalStorage(cityName, data);
+        })
+}
+
 
 
 // created a for loop to get the five days of weather data (Tutor helped with this part)
