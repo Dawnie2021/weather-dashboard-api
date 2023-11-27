@@ -34,6 +34,17 @@ function getWeatherReport(cityName, lat, lon) {
     addSearchHistory(cityName);
 }
 
+// get the current weather
+function getCurrentWeather(cityName, lat, lon) {
+    fetch('https://api.openweathermap.org/data/2.5/weather?appid=bceb14bd5cd6a234ef51a73c1cda6012&lat=' + lat + '&lon=' + lon + '&units=imperial')
+        .then(function (response) {
+            return response.json();
+
+        })
+        .then(function (data) {
+            saveCurrentWeatherToLocalStorage(cityName, data);
+        })
+}
 
 
 
