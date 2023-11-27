@@ -7,6 +7,25 @@ var currentWeatherContainer = document.getElementById("currentWeather");
 // added a click event listener to the search button
 searchButton.addEventListener('click, getCityGeoData');
 
+// created a function to get the city data
+function getCityGeoData() {
+// get the city name from the input
+    var cityName = cityInput.value
+
+    // if the city name is not empty, then get the data 
+    if (cityName) {
+        fetch('https://api.openweathermap.org/geo/1.0/direct?appid=bceb14bd5cd6a234ef51a73c1cda6012&limit=1&q=' + cityName)
+            .then(function (response) {
+                return response.json();
+            })
+    
+            .then(function (data) {
+                getWeatherReport(cityName, data[0].lat, data[0].lon);
+            });
+        }
+
+}
+
 // Created a function to get the latitude and longitude
 function getGeoWeather(lat, lon) {
     fetch('https://api.openweathermap.org/data/2.5/forecast?appid=bceb14bd5cd6a234ef51a73c1cda6012&lat=' + lat + '&lon=' + lon + '&units=imperial')
@@ -40,18 +59,3 @@ function getGeoWeather(lat, lon) {
         })
 }
 
-// created a function to get the city data
-function getCityGeoData() {
-
-    cityName = city.value
-
-    fetch('https://api.openweathermap.org/geo/1.0/direct?appid=bceb14bd5cd6a234ef51a73c1cda6012&limit=1&q=' + cityName)
-        .then(function (response) {
-            return response.json();
-        })
-
-        .then(function (data) {
-            getGeoWeather(data[0].lat, data[0].lon);
-        });
-
-    }
