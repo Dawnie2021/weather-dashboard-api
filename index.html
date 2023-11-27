@@ -5,72 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <script src="./assets/script.js" defer></script>
+    <script src="assets\script.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <!-- added styling to the page -->
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
         .five-day-forecast {
             display: flex;
 
         }
-
+        body{
+            margin: 0;
+            padding: 0;
+        }
         header {
-            padding: 15px;
+            padding:15px;
             font-size: 25px;
             font-weight: 500;
             color: white;
             background-color: blueviolet;
-            display: flex;
-            justify-content: center;
+          display: flex;
+          justify-content: center;
         }
 
         .results {
-            padding: 15px;
+            padding: 5px;
         }
 
         h3 {
-            padding: 10px;
+            padding:5px;
         }
-    </style>
 
-    <header>Weather Dashboard</header>
+    
+    </style>
+<header>Weather Dashboard</header>
     <main class="container-fluid">
         <div class="row">
             <div class="col col-md-3">
                 <h3>Search for a City:</h3>
                 <form>
                     <input type="text" class="form-control" id="city">
-                    <button class="btn btn-primary" type="button">Search</button>
+                    <button class="btn btn-primary w-100" type="button" id="searchBtn">Search</button>
                 </form>
             </div>
-            <!-- added a div for the results -->
+
             <div class="col col-md-8">
                 <div class="results" id="currentWeather">
 
-
                 </div>
             </div>
-            <!-- added divs to show 5 day forcast and results -->
-            <div class="row">
-                <div class="col col-md-3" id="searchHistory">
-                </div>
-                <div class="col col-md-8 five-day-forecast">
-                </div>
+        </div>
+            
+        <div class="row">
+            <div class="col col-md-3" id="searchHistory">
             </div>
-
+            <div class="col col-md-8 five-day-forecast">
+            </div>
+        </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 </body>
-
 </html>

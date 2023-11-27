@@ -5,25 +5,25 @@ var searchHistoryContainer = document.getElementById("searchHistory");
 var currentWeatherContainer = document.getElementById("currentWeather");
 
 // added a click event listener to the search button
-searchButton.addEventListener('click, getCityGeoData');
+searchButton.addEventListener('click', getCityGeoData);
 
-// created a function to get the city data
+// Created a function to get the latitude and longitude
 function getCityGeoData() {
+    
     // get the city name from the input
     var cityName = cityInput.value
 
-    // if the city name is not empty, then get the data 
+    // if the city name is not empty, then get the data
     if (cityName) {
-        fetch('https://api.openweathermap.org/geo/1.0/direct?appid=bceb14bd5cd6a234ef51a73c1cda6012&limit=1&q=' + cityName)
-            .then(function (response) {
-                return response.json();
-            })
+    fetch('https://api.openweathermap.org/geo/1.0/direct?appid=bceb14bd5cd6a234ef51a73c1cda6012&limit=1&q=' + cityName)
+        .then(function (response) {
+            return response.json();
+        })
 
-            .then(function (data) {
-                getWeatherReport(cityName, data[0].lat, data[0].lon);
-            });
+        .then(function (data) {
+            getWeatherReport(cityName, data[0].lat, data[0].lon);
+        });
     }
-
 }
 
 // get the current weather and the 5 day forecast
@@ -84,7 +84,7 @@ function loadForecastFromLocalStorage(cityName) {
     data = JSON.parse(localStorage.getItem(`${cityName}-forecast`));
 
     // display the data if it exists
-    if (data) {
+    if(data) {
 
         // created a for loop to get the five days of weather data (Tutor helped with this part)
         for (let i = 0; i < data.list.length; i += 8) {
@@ -128,10 +128,17 @@ function loadCurrentWeatherFromLocalStorage(cityName) {
     currentWeatherContainer.innerHTML = currentWeatherCard
 }
 
+// to get seach history
+function addSearchHistory(cityName) {
+    var searchHistoryLink = `<button class="btn btn-info w-100 p-2 mb-1" type="button" onclick="loadWeatherReportFromLocalStorage('${cityName}')">${cityName}</button>`
+    var searchHistoryLinkDiv = document.createElement('div')
+    searchHistoryLinkDiv.innerHTML = searchHistoryLink
+    searchHistoryContainer.appendChild(searchHistoryLinkDiv)
+}
 
-
-
-
-
-
-
+// clear the 5 day forecast container
+function clearWeeklyWeather() {
+    while(fiveDayForecastContainer.firstChild) {
+        fiveDayForecastContainer.removeChild(fiveDayForecastContainer.firstChild);
+    }
+}
