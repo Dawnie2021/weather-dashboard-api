@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a weather dashboard app that uses APIs. It displays the current date, temperature, wind speed, and humidity. It also displays the following five days of the same data. 
+This is a weather dashboard app that uses APIs. It also uses JavaScript, HTML, and bootstrap. It displays the current date, temperature, wind speed, and humidity. It also displays the following five days of the same data. 
 
 ## ScreenShot
 ![Alt text](assets/images/Weather-Dashboard1.png)
