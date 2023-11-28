@@ -111,11 +111,11 @@ function loadCurrentWeatherFromLocalStorage(cityName) {
     // retrieve the data from local storage
     data = JSON.parse(localStorage.getItem(`${cityName}-current`));
     console.log(data)
-
+// added variables to display date
     var date = new Date(data.dt * 1000);
     var options = { month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' };
     var formattedDate = date.toLocaleString('en-US', options);
-
+// created a variable to display current weather
     var currentWeatherCard = `
     <div class="card">
     <h4 class="card-title">${data.name}</h4>
