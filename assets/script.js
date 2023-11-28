@@ -95,7 +95,7 @@ function loadForecastFromLocalStorage(cityName) {
                 <div class = "card-body" >
                     <p class="card-text">Temp: ${data.list[i].main.temp}°F</p>
                     <p class="card-text">Speed: ${data.list[i].wind.speed}MPH</p>
-                    <p class="card-text">Humidity: ${data.list[i].main.humidity}</p>
+                    <p class="card-text">Humidity: ${data.list[i].main.humidity}%</p>
                 </div >
             </div >
                 `
