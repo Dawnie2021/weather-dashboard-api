@@ -4,12 +4,9 @@ var fiveDayForecastContainer = document.querySelector(".five-day-forecast")
 var searchHistoryContainer = document.getElementById("searchHistory");
 var currentWeatherContainer = document.getElementById("currentWeather");
 
-// added a click event listener to the search button
-searchButton.addEventListener('click', getCityGeoData);
-
 // Created a function to get the latitude and longitude
-function getCityGeoData() {
-    
+function getCityGeoData(event) {
+    event.preventDefault();
     // get the city name from the input
     var cityName = cityInput.value
 
@@ -89,9 +86,9 @@ function loadForecastFromLocalStorage(cityName) {
         // created a for loop to get the five days of weather data (Tutor helped with this part)
         for (let i = 0; i < data.list.length; i += 8) {
             var fiveDayCard = `
-            <div class="card m-1">
+            <div class="card m-1 p-3">
                 <h5 class="card-title">${dayjs(data.list[i].dt_txt).format('M/D/YYYY')}</h5>
-                <img src="https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" class="card-img-top" alt="...">
+                <img src="https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" class="mx-auto d-block w-50" alt="...">
                 <div class = "card-body" >
                     <p class="card-text">Temp: ${data.list[i].main.temp}°F</p>
                     <p class="card-text">Speed: ${data.list[i].wind.speed}MPH</p>
@@ -110,6 +107,9 @@ function loadCurrentWeatherFromLocalStorage(cityName) {
     console.log(cityName)
     // retrieve the data from local storage
     data = JSON.parse(localStorage.getItem(`${cityName}-current`));
+
+    if (!data) return;
+
     console.log(data)
 // added variables to display date
     var date = new Date(data.dt * 1000);
@@ -142,3 +142,6 @@ function clearWeeklyWeather() {
         fiveDayForecastContainer.removeChild(fiveDayForecastContainer.firstChild);
     }
 }
+
+// added a click event listener to the search button
+searchButton.addEventListener('click', getCityGeoData);
